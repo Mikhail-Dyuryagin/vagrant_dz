@@ -1,0 +1,14 @@
+
+server_tokens off;
+
+server {
+    listen 80 default_server;
+    server_name _;
+   root /var/www;
+       index index.html;
+       location /api/sum/ {
+         proxy_pass http://localhost:8080;
+       }
+
+
+}
